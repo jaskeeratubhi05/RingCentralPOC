@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="QA Test RingCentral">
+
+    <test name="Validate Listed APIs">
+        <classes>
+            <class name="BaseTest"/>
+            <class name="findalluser.FindAllUsersTest">
+                    <methods>
+                        <include name="testFindAllUsersValid"/>
+                        <include name="testFindAllUsersInValid" />
+                    </methods>
+            </class>
+            <class name="saveuser.SaveUserTest">
+                <methods>
+                    <include name="testSaveUserValid"/>
+                    <include name="testSaveUserInvalidFirstName"/>
+                    <include name="testSaveUserInvalidLastName"/>
+                    <include name="testSaveUserInvalidEmail"/>
+                    <include name="testSaveUserInvalidDate"/>
+                    <include name="testSaveUserDuplicateEmail"/>
+                </methods>
+            </class>
+            <class name="deleteuser.DeleteUserTest">
+                <methods>
+                    <include name="testDeleteUserValid"/>
+                    <include name="testDeleteUserInvalid" />
+                    <include name="testDeleteUserMissingRequiredParam"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
